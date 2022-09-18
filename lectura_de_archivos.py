@@ -1,6 +1,7 @@
 import os
 import shutil
 import os.path
+from pathlib import PurePath
 #ingresan 
 Ubicacion_carpeta_origen="Downloads"
 ubicacion_carpeta_destino="Downloads"
@@ -9,7 +10,8 @@ carpeta_destino="prueba_destino"
 
 #definicion rutas
 ruta_base=os.getcwd()
-ruta_origen=os.path.join(ruta_base,Ubicacion_carpeta_origen,carpeta_origen)
+ruta_origen=PurePath(ruta_base,Ubicacion_carpeta_origen,carpeta_origen)
+#os.path.join(ruta_base,Ubicacion_carpeta_origen,carpeta_origen)
 
 ruta_destino=carpeta_destino
 archivos=os.listdir(ruta_origen)
